@@ -13,13 +13,30 @@
         android:theme="@style/Theme.LearningCompose"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.LearningCompose">
+            android:name=".acivity.ListActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".acivity.MainActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".acivity.ReCompositionActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".acivity.StateExampleActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".acivity.QuoteListActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".acivity.QuoteDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".serverDrivenUI.DynamicUiActivity"
+            android:exported="false" />
+        <activity android:name=".DashboardActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

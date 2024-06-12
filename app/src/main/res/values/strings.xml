@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">learningCompose</string>
+    <string name="title_activity_sduiactivity">SDUIActivity</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
 </resources>
