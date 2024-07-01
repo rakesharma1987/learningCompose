@@ -65,6 +65,8 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.material.icons)
     implementation(libs.gson)
+    implementation(libs.coroutine.dependency)
+    implementation(libs.coroutine.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

@@ -1,6 +1,7 @@
 package com.example.learningcompose.acivity
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import com.example.learningcompose.model.Quotes
@@ -13,9 +14,7 @@ class QuoteDetailActivity: ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            val intent = intent
-            val quoteString = intent.getStringExtra(KeyName.quote)
-            val quote = Gson().fromJson(quoteString, Quotes::class.java)
+            val quote = intent.getSerializableExtra("AA") as Quotes
             QuoteDetail(quote)
         }
     }
