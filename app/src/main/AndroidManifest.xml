@@ -33,6 +33,8 @@
         <activity
             android:name=".serverDrivenUI.DynamicUiActivity"
             android:exported="false" />
+        <activity android:name=".basicLayoutsCodelab.BasicLayoutComposeActivity"
+            android:exported="false"/>
         <activity android:name=".DashboardActivity"
             android:exported="true">
             <intent-filter>

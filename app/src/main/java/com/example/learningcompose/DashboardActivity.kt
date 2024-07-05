@@ -18,6 +18,7 @@ import com.example.learningcompose.acivity.MainActivity
 import com.example.learningcompose.acivity.QuoteListActivity
 import com.example.learningcompose.acivity.ReCompositionActivity
 import com.example.learningcompose.acivity.StateExampleActivity
+import com.example.learningcompose.basicLayoutsCodelab.BasicLayoutComposeActivity
 import com.example.learningcompose.serverDrivenUI.DynamicUiActivity
 import com.example.learningcompose.ui.theme.LearningComposeTheme
 import com.example.learningcompose.views.DashboardUi
@@ -45,6 +46,9 @@ class DashboardActivity : ComponentActivity() {
                    }
                    "DynamicUiActivity" ->{
                        startActivity(Intent(this, DynamicUiActivity::class.java))
+                   }
+                   "BasicLayoutComposeActivity" ->{
+                       startActivity(Intent(this, BasicLayoutComposeActivity::class.java))
                    }
                }
            })
