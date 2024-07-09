@@ -1,25 +1,38 @@
 package com.example.learningcompose.basicLayoutsCodelab
 
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
+import android.util.Log
+import androidx.compose.foundation.gestures.scrollable
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.windowsizeclass.WindowSizeClass
+import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
-fun MySootheAppPortrait(){
-    Scaffold (
-        bottomBar = { SootheBottomNavigation()}
-    ){padding ->
-        HomeSection(Modifier.padding(padding))
+fun MySootheApp(windowSize: WindowSizeClass){
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .verticalScroll(rememberScrollState())
+    ) {
+        when(windowSize.widthSizeClass){
+            WindowWidthSizeClass.Compact ->{
+                MySootheAppPortrait()
+                Log.d("MySootheApp", "Compact")
 
+            }
+            WindowWidthSizeClass.Medium ->{
+                MySoothAppLandscap()
+                Log.d("MySootheApp", "Medium")
+            }
+            WindowWidthSizeClass.Expanded ->{
+                MySoothAppLandscap()
+                Log.d("MySootheApp", "Expand")
+            }
+        }
     }
-
-}
-
-@Preview
-@Composable
-fun MySootheAppPortraitPreview(){
-    MySootheAppPortrait()
 
 }

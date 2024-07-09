@@ -67,6 +67,7 @@ dependencies {
     implementation(libs.gson)
     implementation(libs.coroutine.dependency)
     implementation(libs.coroutine.android)
+    implementation(libs.androidx.material3.window.size.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
