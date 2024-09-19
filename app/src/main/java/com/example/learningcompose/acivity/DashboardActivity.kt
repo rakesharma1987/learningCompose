@@ -1,27 +1,13 @@
-package com.example.learningcompose
+package com.example.learningcompose.acivity
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.learningcompose.acivity.ListActivity
-import com.example.learningcompose.acivity.MainActivity
-import com.example.learningcompose.acivity.QuoteListActivity
-import com.example.learningcompose.acivity.ReCompositionActivity
-import com.example.learningcompose.acivity.StateExampleActivity
 import com.example.learningcompose.basicLayoutsCodelab.BasicLayoutComposeActivity
 import com.example.learningcompose.serverDrivenUI.DynamicUiActivity
-import com.example.learningcompose.ui.theme.LearningComposeTheme
 import com.example.learningcompose.views.DashboardUi
+import com.example.learningcompose.wellnessApp.WellnessActivity
 
 class DashboardActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,6 +35,9 @@ class DashboardActivity : ComponentActivity() {
                    }
                    "BasicLayoutComposeActivity" ->{
                        startActivity(Intent(this, BasicLayoutComposeActivity::class.java))
+                   }
+                   "WellnessActivity" ->{
+                       startActivity(Intent(this, WellnessActivity::class.java))
                    }
                }
            })

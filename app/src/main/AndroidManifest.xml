@@ -13,34 +13,73 @@
         android:theme="@style/Theme.LearningCompose"
         tools:targetApi="31">
         <activity
+            android:name=".udemyCourse.Task1_Activity"
+            android:exported="true"
+            android:label="@string/title_activity_task1"
+            android:theme="@style/Theme.LearningCompose">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".udemyCourse.ButtonComponentActivity"
+            android:exported="true"
+            android:label="@string/title_activity_button_component"
+            android:theme="@style/Theme.LearningCompose">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".udemyCourse.MainActivity"
+            android:exported="true"
+            android:label="@string/title_activity_main"
+            android:theme="@style/Theme.LearningCompose">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name=".wellnessApp.WellnessActivity"
+            android:exported="false"
+            android:label="@string/title_activity_wellness"
+            android:theme="@style/Theme.LearningCompose" />
+        <activity
             android:name=".acivity.ListActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".acivity.MainActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".acivity.ReCompositionActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".acivity.StateExampleActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".acivity.QuoteListActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".acivity.QuoteDetailActivity"
             android:exported="false" />
         <activity
             android:name=".serverDrivenUI.DynamicUiActivity"
             android:exported="false" />
-        <activity android:name=".basicLayoutsCodelab.BasicLayoutComposeActivity"
-            android:exported="false"/>
-        <activity android:name=".DashboardActivity"
+        <activity
+            android:name=".basicLayoutsCodelab.BasicLayoutComposeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".acivity.DashboardActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
     </application>
 

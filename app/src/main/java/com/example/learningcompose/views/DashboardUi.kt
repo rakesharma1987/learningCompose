@@ -61,6 +61,7 @@ object DashboardUi {
         dashboardItems.add(Items("QuoteListActivity"))
         dashboardItems.add(Items("DynamicUiActivity"))
         dashboardItems.add(Items("BasicLayoutComposeActivity"))
+        dashboardItems.add(Items("WellnessActivity"))
 
         return dashboardItems
     }
