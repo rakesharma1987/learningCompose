@@ -6,7 +6,9 @@ import android.widget.Space
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -26,6 +28,7 @@ import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.LocalTextStyle
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -38,6 +41,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -47,6 +52,7 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.learningcompose.R
 import com.example.learningcompose.udemyCourse.ui.theme.LearningComposeTheme
 
 class Task1_Activity : ComponentActivity() {
@@ -85,14 +91,31 @@ fun Components(){
         mutableStateOf("")
     }
 
+    val myImage = remember {
+        mutableStateOf(R.drawable.jetpack_compose)
+    }
+
 
     Column(
         modifier = Modifier
             .fillMaxSize()
             .background(Color.White)
-            .padding(10.dp),
+            .padding(0.dp, 50.dp, 0.dp, 10.dp),
         verticalArrangement = Arrangement.Top
     ){
+        Box(
+            modifier = Modifier.align(alignment = Alignment.CenterHorizontally)
+        ) {
+            Image(
+                painter = painterResource(id = myImage.value),
+                contentDescription = "jetpack Compose",
+                contentScale = ContentScale.Fit,
+                alignment = Alignment.Center,
+                modifier = Modifier.background(color = Color.Black, shape = RoundedCornerShape(10.dp))
+                    .size(100.dp)
+            )
+        }
+        Spacer(modifier = Modifier.size(10.dp))
         TextField(
             value = inputFirstName.value,
             onValueChange = {
@@ -147,7 +170,9 @@ fun Components(){
             label = { Text(text = "Enter email")},
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(5.dp, 0.dp, 5.dp, 5.dp),
+                .padding(5.dp, 0.dp, 5.dp, 5.dp)
+                .border(1.dp, Color.Black, shape = RoundedCornerShape(0.dp))
+                .background(color = Color.White, shape = RoundedCornerShape(0.dp)),
             colors = TextFieldDefaults.colors(
                 focusedTextColor = Color.Black,
                 unfocusedTextColor = Color.Black,
@@ -169,7 +194,9 @@ fun Components(){
                         Icon(imageVector = Icons.Default.Clear, contentDescription = "Clear text")
                     }
                 }
-            }
+            },
+            textStyle = LocalTextStyle.current.copy(color = Color.Black),
+            singleLine = true
 
         )
         Spacer(modifier = Modifier.size(50.dp))
@@ -180,6 +207,7 @@ fun Components(){
                 onClick = {
                     getInputFirstName.value = inputFirstName.value
                     getInputLastName.value = inputLastName.value
+                    myImage.value = R.drawable.female_avatar
                 },
                 colors = ButtonDefaults.buttonColors(containerColor = Color.Black),
                 shape = RoundedCornerShape(10.dp)
@@ -201,6 +229,8 @@ fun Components(){
         }
     }
 }
+
+
 
 @Preview
 @Composable
