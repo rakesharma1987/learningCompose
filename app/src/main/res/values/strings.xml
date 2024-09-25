@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">learningCompose</string>
+    <string name="app_name">Compose</string>
     <string name="title_activity_sduiactivity">SDUIActivity</string>
     <string name="title_activity_dashboard">DashboardActivity</string>
     <string name="txt_search">Search...</string>
@@ -59,4 +59,6 @@
         <item>India</item>
     </string-array>
     <string name="title_activity_toast_message">ToastMessageActivity</string>
+    <string name="title_activity_dialog">DialogActivity</string>
+    <string name="title_activity_actionbar">ActionbarActivity</string>
 </resources>
