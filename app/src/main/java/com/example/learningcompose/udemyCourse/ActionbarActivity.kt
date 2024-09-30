@@ -13,6 +13,8 @@ import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Share
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -52,6 +54,9 @@ fun TopAppBar(){
     val actionText = remember {
         mutableStateOf("action will be shown here")
     }
+    val menuStatus = remember {
+        mutableStateOf(false)
+    }
     Scaffold(
         topBar = {
             androidx.compose.material3.TopAppBar(
@@ -77,8 +82,30 @@ fun TopAppBar(){
                         Icon(imageVector = Icons.Filled.Search, contentDescription = "Menu")
                     }
 
-                    IconButton(onClick = { actionText.value = "Action Icon Clicked" }) {
+                    IconButton(
+                        onClick = {
+//                            actionText.value = "More Icon Clicked"
+                            menuStatus.value = true
+                        }) {
                         Icon(imageVector = Icons.Filled.MoreVert, contentDescription = "Menu")
+
+                        DropdownMenu(
+                            expanded = menuStatus.value,
+                            onDismissRequest = {menuStatus.value = false}) {
+                            
+                            DropdownMenuItem(
+                                text = { Text(text = "Settings") },
+                                onClick = {
+                                    actionText.value = "Settings clicked"
+                                    menuStatus.value = false
+                                })
+                            DropdownMenuItem(
+                                text = { Text(text = "Logout") },
+                                onClick = {
+                                    actionText.value = "Logout clicked"
+                                    menuStatus.value = false
+                                })
+                        }
                     }
                 },
                 colors = TopAppBarDefaults.smallTopAppBarColors(
