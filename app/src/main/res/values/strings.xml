@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">learningCompose</string>
+    <string name="app_name">Compose</string>
     <string name="title_activity_sduiactivity">SDUIActivity</string>
     <string name="title_activity_dashboard">DashboardActivity</string>
     <string name="txt_search">Search...</string>
@@ -49,4 +49,16 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_button_component">ButtonComponentActivity</string>
     <string name="title_activity_task1">Task1_Activity</string>
+    <string name="title_activity_check_box">CheckBoxActivity</string>
+    <string name="title_activity_radio_button">RadioButtonActivity</string>
+    <string name="title_activity_switch_demo">SwitchDemoActivity</string>
+    <string name="title_activity_dropdown">DropdownActivity</string>
+    <string-array name="country_list">
+        <item>Germany</item>
+        <item>Bangladesh</item>
+        <item>India</item>
+    </string-array>
+    <string name="title_activity_toast_message">ToastMessageActivity</string>
+    <string name="title_activity_dialog">DialogActivity</string>
+    <string name="title_activity_actionbar">ActionbarActivity</string>
 </resources>
