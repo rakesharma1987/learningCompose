@@ -81,9 +81,9 @@ fun MainPage(){
                     Spacer(modifier = Modifier.height(10.dp))
 
                     TextField(
-                        value = userName.value,
+                        value = userAge.value,
                         onValueChange = {
-                            userName.value = it
+                            userAge.value = it
                         },
                         label = { Text(text = "Enter your age")},
                         colors = TextFieldDefaults.textFieldColors(
@@ -103,14 +103,14 @@ fun MainPage(){
                     Button(onClick = {
 
                       },
-                        colors = ButtonDefaults.buttonColors(containerColor = Color.White),
+                        colors = ButtonDefaults.buttonColors(containerColor = Color.Blue),
                         modifier = Modifier.size(200.dp, 60.dp),
                         shape = RoundedCornerShape(10.dp),
                         border = BorderStroke(2.dp, color = colorResource(id = R.color.purple_500))
                         ) {
                         Text(
                             text = "Send",
-                            color = colorResource(id = R.color.purple_500)
+                            color = colorResource(id = R.color.white)
                         )
                         
                     }
