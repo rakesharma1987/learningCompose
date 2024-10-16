@@ -11,6 +11,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.example.learningcompose.udemyCourse.ui.theme.LearningComposeTheme
 
 class NavigationActivity : ComponentActivity() {
@@ -19,8 +22,25 @@ class NavigationActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             LearningComposeTheme {
-                MainPage()
+//                MainPage()
+                MyNavigation()
             }
         }
     }
+}
+
+@Composable
+fun MyNavigation(){
+    val navController = rememberNavController()
+
+    NavHost(navController = navController, startDestination = "MainPage"){
+        composable(route = "MainPage") {
+            MainPage(navController)
+        }
+
+        composable(route = "SecondPage") {
+            SecondPage(navController)
+        }
+    }
+
 }

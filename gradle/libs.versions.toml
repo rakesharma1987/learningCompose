@@ -18,6 +18,7 @@ coroutineversion = "1.9.0-RC"
 material3WindowSizeClassAndroid = "1.2.1"
 navigationFragmentKtx = "2.6.0"
 navigationUiKtx = "2.6.0"
+navVersion = "2.8.3"
 
 
 [libraries]
@@ -46,6 +47,7 @@ coroutine-android = {group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines
 androidx-material3-window-size-android = { group = "androidx.compose.material3", name = "material3-window-size-class-android", version.ref = "material3WindowSizeClassAndroid" }
 androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
 androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
+navigationCompose = {group = "androidx.navigation", name = "navigation-compose", version.ref = "navVersion"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
