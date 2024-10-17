@@ -31,11 +31,12 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.learningcompose.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainPage(){
+fun MainPage(navController: NavController){
     val userName = remember {
         mutableStateOf("")
     }
@@ -102,7 +103,9 @@ fun MainPage(){
                     Spacer(modifier = Modifier.height(50.dp))
                     
                     Button(onClick = {
-
+                            navController.navigate(route = "SecondPage"){
+//                                popUpTo("MainPage"){inclusive = true}
+                            }
                       },
                         colors = ButtonDefaults.buttonColors(containerColor = Color.Blue),
                         modifier = Modifier.size(200.dp, 60.dp),

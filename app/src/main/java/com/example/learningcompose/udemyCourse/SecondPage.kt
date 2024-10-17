@@ -11,9 +11,13 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBackIosNew
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -30,11 +34,12 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.learningcompose.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SecondPage(){
+fun SecondPage(navController: NavController){
     val userName = remember {
         mutableStateOf("")
     }
@@ -46,11 +51,21 @@ fun SecondPage(){
         topBar = {
             androidx.compose.material3.TopAppBar(
                 title = {
-                    Text(text = "Second page")
+                    Text(text = "Second page", color = Color.White)
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = Color.White
-                )
+                    containerColor = colorResource(R.color.purple_500)
+                ),
+                navigationIcon = {
+                    IconButton(
+                        onClick = {
+//                            navController.navigate("MainPage")
+                            navController.popBackStack()
+                        }
+                    ) {
+                        Icon(Icons.Filled.ArrowBackIosNew, contentDescription = "Back ArrowS")
+                    }
+                }
             )
         },
         content = {paddingValue ->
