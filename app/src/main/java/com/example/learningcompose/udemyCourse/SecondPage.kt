@@ -39,7 +39,7 @@ import com.example.learningcompose.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SecondPage(navController: NavController){
+fun SecondPage(navController: NavController, name: String, age: Int){
     val userName = remember {
         mutableStateOf("")
     }
@@ -76,11 +76,11 @@ fun SecondPage(navController: NavController){
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally) {
                 Text(
-                    text = "Name", color = Color.Black, fontSize = 20.sp
+                    text = "Name: $name", color = Color.Black, fontSize = 20.sp
                 )
                 Spacer(modifier = Modifier.height(20.dp))
                 Text(
-                    text = "Age", color = Color.Black, fontSize = 20.sp
+                    text = "Age: $age", color = Color.Black, fontSize = 20.sp
                 )
 
             }
