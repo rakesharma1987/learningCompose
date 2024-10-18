@@ -1,5 +1,6 @@
 package com.example.learningcompose.udemyCourse
 
+import android.widget.Toast
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -26,6 +27,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.KeyboardType
@@ -43,6 +45,8 @@ fun MainPage(navController: NavController){
     val userAge = remember {
         mutableStateOf("")
     }
+
+    val localContext = LocalContext.current
 
     Scaffold(
         topBar = {
@@ -103,9 +107,18 @@ fun MainPage(navController: NavController){
                     Spacer(modifier = Modifier.height(50.dp))
                     
                     Button(onClick = {
-                            navController.navigate(route = "SecondPage"){
+
+                        if (userName.value.isEmpty() || userAge.value.isEmpty()) {
+                            Toast.makeText(localContext, "Please enter all data", Toast.LENGTH_SHORT).show()
+                        }else {
+                            try {
+                                navController.navigate(route = "SecondPage/${userName.value}/${userAge.value}") {
 //                                popUpTo("MainPage"){inclusive = true}
+                                }
+                            }catch (eae: IllegalArgumentException){
+                                Toast.makeText(localContext, "Please enter valid data", Toast.LENGTH_SHORT).show()
                             }
+                        }
                       },
                         colors = ButtonDefaults.buttonColors(containerColor = Color.Blue),
                         modifier = Modifier.size(200.dp, 60.dp),
