@@ -10,7 +10,7 @@ import com.example.learningcompose.udemyCourse.model.CountryModel
 // https://medium.com/@tangkegaga/snapshot-concept-in-jetpack-compose-6c62dabdb143
 
 @Composable
-fun RetrieveCountryList(): SnapshotStateList<CountryModel>{
+fun retrieveCountryList(): SnapshotStateList<CountryModel>{
     val countryList = remember {
         mutableStateListOf(
             CountryModel(1, "Argentina", "This is argentina country flag", R.drawable.ic_argentine),
