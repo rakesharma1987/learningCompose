@@ -29,7 +29,9 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
@@ -44,6 +46,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -59,8 +62,16 @@ class LazyColumnExampleActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             LearningComposeTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    FirstPage()
+//                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+////                    FirstPage()
+//                    MyNavigationForCountry()
+//                }
+
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    MyNavigationForCountry()
                 }
             }
         }
@@ -68,18 +79,25 @@ class LazyColumnExampleActivity : ComponentActivity() {
 }
 
 @Composable
-fun MyNavigation(){
+fun MyNavigationForCountry(){
     val navController = rememberNavController()
 
     NavHost(navController = navController, startDestination = "CountryUiPage"){
         composable(route = "CountryUiPage"){
-            FirstPage(navController = navController)
+//            ShowLazyColumn(navController = navController)
+//            ShowLazyRow(navController = navController)
+            ShowLazyGrid(navController = navController)
         }
 
         composable(route = "CountryDetailpage/{id}",
-            arguments = listOf(navArgument("id"))
-        ) {
-            type =
+            arguments = listOf(
+                navArgument("id"){type = NavType.IntType}
+            )
+        ) {it ->
+            val countryId = it.arguments?.getInt("id")
+            countryId?.let {
+                SecondPage(navController = navController, id = it)
+            }
         }
 
     }
